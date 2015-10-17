@@ -1,0 +1,6 @@
+Q:\Programming\Projects\Visual Studio\SortLibrary\SortLibrary\bin\Debug\SortLibrary.exe.config
+Q:\Programming\Projects\Visual Studio\SortLibrary\SortLibrary\bin\Debug\SortLibrary.exe
+Q:\Programming\Projects\Visual Studio\SortLibrary\SortLibrary\bin\Debug\SortLibrary.pdb
+Q:\Programming\Projects\Visual Studio\SortLibrary\SortLibrary\obj\Debug\SortLibrary.csprojResolveAssemblyReference.cache
+Q:\Programming\Projects\Visual Studio\SortLibrary\SortLibrary\obj\Debug\SortLibrary.exe
+Q:\Programming\Projects\Visual Studio\SortLibrary\SortLibrary\obj\Debug\SortLibrary.pdb
