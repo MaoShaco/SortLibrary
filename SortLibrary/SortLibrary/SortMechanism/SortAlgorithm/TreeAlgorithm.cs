@@ -3,7 +3,7 @@ using SortLibrary.SortMechanism.Comparer;
 
 namespace SortLibrary.SortMechanism.SortAlgorithm
 {
-    internal class TreeAlgorithm<TItem> : ISortAlgorithm<TItem>
+    class TreeAlgorithm<TItem> : ISortAlgorithm<TItem>
     {
         public void SortWithAlgorithm(ref List<TItem> elements, ISpecialComparer<TItem> comparer)
         {

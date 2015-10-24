@@ -1,20 +1,19 @@
-﻿namespace SortLibrary.SortMechanism.SortAlgorithm.SwitchAlgorithm
+﻿using System;
+
+namespace SortLibrary.SortMechanism.SortAlgorithm.SwitchAlgorithm
 {
-    public static class AlgorithmSwitch<TItem>
+    public class AlgorithmSwitch<TItem>
     {
-        public static ISortAlgorithm<TItem> SwitchAlgorithm(AlgorithmType algorithm)
+        public ISortAlgorithm<TItem> GetSortAlgorithm(AlgorithmType algorithmName)
         {
-            switch (algorithm)
-            {
-                case AlgorithmType.Bubble:
-                    return new BubbleAlgorithm<TItem>();
-                case AlgorithmType.Shell:
-                    return new ShellAlgorithm<TItem>();
-                case AlgorithmType.Tree:
-                    return new TreeAlgorithm<TItem>();
-                default:
-                    return new BubbleAlgorithm<TItem>();
-            }
+            var type = Type.GetType($"SortLibrary.SortMechanism.SortAlgorithm.{algorithmName}Algorithm`1");
+            if (type != null)
+                return
+                    (ISortAlgorithm<TItem>)
+                        Activator.CreateInstance(
+                            type
+                                .MakeGenericType(typeof (TItem)));
+            throw new ArgumentNullException();
         }
     }
 }

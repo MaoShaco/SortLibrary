@@ -6,9 +6,10 @@ using SortLibrary.SortMechanism.SortAlgorithm.SwitchAlgorithm;
 
 namespace SortLibrary.SortMechanism
 {
-    class DefaultSorter<TItem> : Sorter<TItem>
+    class DefaultSorterSkin<TItem> : SorterSkin<TItem>
     {
         private static Action<string> _timeAction;
+    
 
         public void InitTimeActrion(Action<string> timeAction = null)
         {
@@ -19,11 +20,9 @@ namespace SortLibrary.SortMechanism
         {
             var timer = Stopwatch.StartNew();
             timer.Start();
-            //var a = new ShellAlgorithm<TItem>();
-            //var a = new BubbleAlgorithm<TItem>();
-            //var a = new TreeAlgorithm<TItem>();
-            var a = AlgorithmSwitch<TItem>.SwitchAlgorithm(algorithm);
-            a.SortWithAlgorithm(ref elements, comparer);
+            var algorithmDeterminer = new AlgorithmSwitch<TItem>();
+            var sortAlgorithm = algorithmDeterminer.GetSortAlgorithm(algorithm);
+            sortAlgorithm.SortWithAlgorithm(ref elements, comparer);
             _timeAction?.Invoke(timer.ElapsedTicks.ToString());
             timer.Stop();
         }

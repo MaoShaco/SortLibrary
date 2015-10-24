@@ -54,10 +54,9 @@
     <Compile Include="SortMechanism\SortAlgorithm\BubbleAlgorithm.cs" />
     <Compile Include="SortMechanism\SortAlgorithm\ISortAlgorithm.cs" />
     <Compile Include="SortMechanism\SortAlgorithm\ShellAlgorithm.cs" />
-    <Compile Include="SortMechanism\SortAlgorithm\SwapMechanism\SwapMechanism.cs" />
     <Compile Include="SortMechanism\SortAlgorithm\TreeAlgorithm.cs" />
-    <Compile Include="SortMechanism\Sorter.cs" />
-    <Compile Include="SortMechanism\DefaultSorter.cs" />
+    <Compile Include="SortMechanism\SorterSkin.cs" />
+    <Compile Include="SortMechanism\DefaultSorterSkin.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

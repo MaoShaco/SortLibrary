@@ -21,22 +21,21 @@ namespace SortLibrary
                 new Gom(-65, 33)
             };
 
-            var sorter = new DefaultSorter<Gom>();
+            var sorter = new DefaultSorterSkin<Gom>();
             sorter.InitTimeActrion(ShowTime);
             ISpecialComparer<Gom> comparer = new GomComparer();
 
-            sorter.Sort(ref gomList, comparer, AlgorithmType.Bubble);
+            sorter.Sort(ref gomList, comparer, AlgorithmType.Tree);
 
             foreach (var item in gomList)
             {
                 Console.WriteLine($"{item}");
             }
-            
         }
 
         private static void ShowTime(string obj)
         {
-            Console.WriteLine($"Sorter per {obj}");
+            Console.WriteLine($"Sorted per {obj}");
         }
     }
 }

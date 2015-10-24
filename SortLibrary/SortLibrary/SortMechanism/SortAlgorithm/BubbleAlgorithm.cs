@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using SortLibrary.SortMechanism.SortAlgorithm.SwapMechanism;
 
 namespace SortLibrary.SortMechanism.SortAlgorithm
 {
-    internal class BubbleAlgorithm<TItem> : ISortAlgorithm<TItem>
+    class BubbleAlgorithm<TItem> : ISortAlgorithm<TItem>
     {
         public void SortWithAlgorithm(ref List<TItem> elements, Comparer.ISpecialComparer<TItem> comparer)
         {
@@ -11,10 +10,10 @@ namespace SortLibrary.SortMechanism.SortAlgorithm
             {
                 for (var j = i + 1; j < elements.Count; j++)
                 {
-                    if (comparer.Compare(elements[j], elements[i]) < 0)
-                    {
-                        SwapMechanism<TItem>.SwapElemets(ref elements, i, j);
-                    }
+                    if (comparer.Compare(elements[j], elements[i]) >= 0) continue;
+                    var temp = elements[i];
+                    elements[i] = elements[j];
+                    elements[j] = temp;
                 }
             }
         }

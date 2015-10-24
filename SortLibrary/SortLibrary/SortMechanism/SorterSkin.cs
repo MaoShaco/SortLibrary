@@ -4,7 +4,7 @@ using SortLibrary.SortMechanism.SortAlgorithm.SwitchAlgorithm;
 
 namespace SortLibrary.SortMechanism
 {
-    abstract class Sorter<TItem>
+    abstract class SorterSkin<TItem>
     {
         public void Sort(ref List<TItem> elements, AlgorithmType algorithm)
         {
