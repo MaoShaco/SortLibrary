@@ -25,7 +25,7 @@ namespace SortLibrary
             sorter.InitTimeActrion(ShowTime);
             ISpecialComparer<Gom> comparer = new GomComparer();
 
-            sorter.Sort(ref gomList, comparer, AlgorithmType.Tree);
+            sorter.Sort(ref gomList, comparer, AlgorithmType.Heap);
 
             foreach (var item in gomList)
             {

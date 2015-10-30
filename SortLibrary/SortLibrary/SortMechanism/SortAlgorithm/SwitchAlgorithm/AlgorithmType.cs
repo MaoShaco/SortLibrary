@@ -4,6 +4,7 @@
     {
         Bubble,
         Shell,
-        Tree
+        Tree,
+        Heap
     }
 }

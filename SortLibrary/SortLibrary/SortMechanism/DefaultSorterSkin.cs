@@ -20,10 +20,19 @@ namespace SortLibrary.SortMechanism
         {
             var timer = Stopwatch.StartNew();
             timer.Start();
-            var algorithmDeterminer = new AlgorithmSwitch<TItem>();
-            var sortAlgorithm = algorithmDeterminer.GetSortAlgorithm(algorithm);
-            sortAlgorithm.SortWithAlgorithm(ref elements, comparer);
-            _timeAction?.Invoke(timer.ElapsedTicks.ToString());
+            try
+            {
+
+                var algorithmDeterminer = new AlgorithmSwitch<TItem>();
+                var sortAlgorithm = algorithmDeterminer.GetSortAlgorithm(algorithm);
+                sortAlgorithm.SortWithAlgorithm(ref elements, comparer);
+                _timeAction?.Invoke(timer.ElapsedTicks.ToString());
+            }
+            catch (ArgumentException exception)
+            {
+                Console.Error.WriteLine($"Not sorted, wrong namespace: {exception.Message}");
+            } 
+
             timer.Stop();
         }
     }

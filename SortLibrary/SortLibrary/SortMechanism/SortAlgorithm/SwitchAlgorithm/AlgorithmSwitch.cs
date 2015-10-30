@@ -4,16 +4,19 @@ namespace SortLibrary.SortMechanism.SortAlgorithm.SwitchAlgorithm
 {
     public class AlgorithmSwitch<TItem>
     {
-        public ISortAlgorithm<TItem> GetSortAlgorithm(AlgorithmType algorithmName)
+        public ISortAlgorithm<TItem> GetSortAlgorithm(AlgorithmType algorithmName, string nameSpacePath = null)
         {
-            var type = Type.GetType($"SortLibrary.SortMechanism.SortAlgorithm.{algorithmName}Algorithm`1");
+            if(nameSpacePath == null)
+                nameSpacePath = typeof (ISortAlgorithm<>).Namespace;
+
+            var type = Type.GetType($"{nameSpacePath}.{algorithmName}Algorithm`1");
             if (type != null)
                 return
                     (ISortAlgorithm<TItem>)
                         Activator.CreateInstance(
                             type
                                 .MakeGenericType(typeof (TItem)));
-            throw new ArgumentNullException();
+            throw new ArgumentException();
         }
     }
 }
