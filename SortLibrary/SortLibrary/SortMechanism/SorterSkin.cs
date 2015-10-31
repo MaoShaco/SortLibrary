@@ -1,16 +1,15 @@
 ﻿using System.Collections.Generic;
 using SortLibrary.SortMechanism.Comparer;
-using SortLibrary.SortMechanism.SortAlgorithm.SwitchAlgorithm;
 
 namespace SortLibrary.SortMechanism
 {
-    abstract class SorterSkin<TItem>
+    internal abstract class SorterSkin<TItem>
     {
-        public void Sort(ref List<TItem> elements, AlgorithmType algorithm)
+        public void Sort(List<TItem> elements)
         {
-            Sort(ref elements, new DefaultComparer<TItem>(), algorithm);
+            Sort(elements, new DefaultComparer<TItem>());
         }
 
-        public abstract void Sort(ref List<TItem> elements, ISpecialComparer<TItem> comparer, AlgorithmType algorithm);
+        public abstract void Sort(List<TItem> elements, ISpecialComparer<TItem> comparer);
     }
 }

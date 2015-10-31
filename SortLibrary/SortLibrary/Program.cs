@@ -1,12 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using SortLibrary.SortMechanism;
 using SortLibrary.SortMechanism.Comparer;
-using SortLibrary.SortMechanism.SortAlgorithm.SwitchAlgorithm;
 
 namespace SortLibrary
 {
-    class Program
+    internal class Program
     {
         private static void Main()
         {
@@ -22,20 +22,19 @@ namespace SortLibrary
             };
 
             var sorter = new DefaultSorterSkin<Gom>();
-            sorter.InitTimeActrion(ShowTime);
+            sorter.InitTimeActrion(ShowInfo);
             ISpecialComparer<Gom> comparer = new GomComparer();
 
-            sorter.Sort(ref gomList, comparer, AlgorithmType.Heap);
+            sorter.Sort(gomList, comparer);
+        }
 
-            foreach (var item in gomList)
+        private static void ShowInfo(string time, Type sortAlgorithm, IList list)
+        {
+            Console.WriteLine($"{sortAlgorithm.Name} Sorted per {time}");
+            foreach (var item in list)
             {
                 Console.WriteLine($"{item}");
             }
-        }
-
-        private static void ShowTime(string obj)
-        {
-            Console.WriteLine($"Sorted per {obj}");
         }
     }
 }

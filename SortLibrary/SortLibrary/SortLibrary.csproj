@@ -50,8 +50,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SortMechanism\Comparer\DefaultComparer.cs" />
     <Compile Include="SortMechanism\Comparer\ISpecialComparer.cs" />
-    <Compile Include="SortMechanism\SortAlgorithm\SwitchAlgorithm\AlgorithmSwitch.cs" />
-    <Compile Include="SortMechanism\SortAlgorithm\SwitchAlgorithm\AlgorithmType.cs" />
     <Compile Include="SortMechanism\SortAlgorithm\BubbleAlgorithm.cs" />
     <Compile Include="SortMechanism\SortAlgorithm\ISortAlgorithm.cs" />
     <Compile Include="SortMechanism\SortAlgorithm\ShellAlgorithm.cs" />

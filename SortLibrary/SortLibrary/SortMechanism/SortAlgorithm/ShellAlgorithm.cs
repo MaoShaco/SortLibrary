@@ -3,11 +3,11 @@ using SortLibrary.SortMechanism.Comparer;
 
 namespace SortLibrary.SortMechanism.SortAlgorithm
 {
-    class ShellAlgorithm<TItem> : ISortAlgorithm<TItem>
+    public class ShellAlgorithm<TItem> : ISortAlgorithm<TItem>
     {
         public void SortWithAlgorithm(ref List<TItem> elements, ISpecialComparer<TItem> comparer)
         {
-            var step = elements.Count / 2;
+            var step = elements.Count/2;
             while (step > 0)
             {
                 for (var i = step; i < elements.Count; i++)

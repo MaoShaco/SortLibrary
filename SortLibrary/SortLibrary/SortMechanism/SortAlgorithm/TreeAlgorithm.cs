@@ -3,7 +3,7 @@ using SortLibrary.SortMechanism.Comparer;
 
 namespace SortLibrary.SortMechanism.SortAlgorithm
 {
-    class TreeAlgorithm<TItem> : ISortAlgorithm<TItem>
+    public class TreeAlgorithm<TItem> : ISortAlgorithm<TItem>
     {
         public void SortWithAlgorithm(ref List<TItem> elements, ISpecialComparer<TItem> comparer)
         {
@@ -16,11 +16,11 @@ namespace SortLibrary.SortMechanism.SortAlgorithm
             tree.Traverse(ref elements);
         }
 
-        internal class Tree
+        private class Tree
         {
-            public Tree Left { get; private set; }
-            public Tree Right { get; private set; }
-            public TItem Key { get; }
+            private Tree Left { get; set; }
+            private Tree Right { get; set; }
+            private TItem Key { get; }
 
             public Tree(TItem k)
             {
@@ -46,7 +46,5 @@ namespace SortLibrary.SortMechanism.SortAlgorithm
                 Right?.Traverse(ref elements);
             }
         }
-
-
     }
 }

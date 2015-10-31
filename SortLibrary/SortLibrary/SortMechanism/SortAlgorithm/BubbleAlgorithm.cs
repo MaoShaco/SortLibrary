@@ -2,7 +2,7 @@
 
 namespace SortLibrary.SortMechanism.SortAlgorithm
 {
-    class BubbleAlgorithm<TItem> : ISortAlgorithm<TItem>
+    public class BubbleAlgorithm<TItem> : ISortAlgorithm<TItem>
     {
         public void SortWithAlgorithm(ref List<TItem> elements, Comparer.ISpecialComparer<TItem> comparer)
         {

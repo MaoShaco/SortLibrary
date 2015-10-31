@@ -8,7 +8,7 @@ namespace SortLibrary.SortMechanism.SortAlgorithm
 
         public void SortWithAlgorithm(ref List<TItem> elements, ISpecialComparer<TItem> comparer)
         {
-            for (var i = elements.Count / 2 - 1; i >= 0; i--)
+            for (var i = elements.Count/2 - 1; i >= 0; i--)
             {
                 ShiftDown(elements, i, elements.Count, comparer);
             }
@@ -26,11 +26,11 @@ namespace SortLibrary.SortMechanism.SortAlgorithm
         protected void ShiftDown(IList<TItem> elements, int leftBound, int rightBound, ISpecialComparer<TItem> comparer)
         {
 
-            while ((leftBound * 2 + 1 < rightBound))
+            while ((leftBound*2 + 1 < rightBound))
             {
-                var maxChild = leftBound * 2 + 1;
-                if (leftBound * 2 + 1 != rightBound - 1 &&
-                    comparer.Compare(elements[leftBound * 2 + 1], elements[leftBound * 2 + 2]) != 1)
+                var maxChild = leftBound*2 + 1;
+                if (leftBound*2 + 1 != rightBound - 1 &&
+                    comparer.Compare(elements[leftBound*2 + 1], elements[leftBound*2 + 2]) != 1)
                 {
                     maxChild++;
                 }
